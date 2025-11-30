@@ -1,0 +1,29 @@
+name: Build Firmware
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install PlatformIO
+        run: |
+          pip install platformio
+
+      - name: Build firmware
+        run: |
+          pio run
+
+      - name: Upload firmware artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: firmware
+          path: .pio/build/**/firmware.bin

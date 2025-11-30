@@ -1,0 +1,46 @@
+# ESP32 Environmental Sensor Node
+
+This project implements a Wi-Fi connected environmental sensor node using an ESP32-based M5Stack Core and the M5Stack ENV III unit. The system collects temperature, humidity, and atmospheric pressure data, processes it in a FreeRTOS environment, and publishes the results to an MQTT broker in JSON format.
+
+The project demonstrates embedded software design practices including real-time task separation, I²C sensor integration, network communication, structured data packaging, and fault-tolerant operation.
+
+---
+
+## Features
+
+- ESP32-based M5Stack Core platform
+- ENV III sensor integration (SHT30 + QMP6988 via I²C)
+- FreeRTOS multi-tasking architecture
+- WiFi connectivity with reconnection handling
+- MQTT publishing using JSON-formatted payloads
+- Fault detection for missing or unresponsive sensors
+- Modular and maintainable firmware structure
+- Secure configuration of WiFi credentials (not stored in the repository)
+
+---
+
+## Hardware Requirements
+
+- M5Stack Core (ESP32)
+- M5Stack ENV Unit III (I²C environmental sensor)
+- USB-C cable for flashing firmware
+
+---
+
+## Software Requirements
+
+- PlatformIO
+- VS Code (recommended)
+- M5Unified library
+- M5GFX library
+- M5Unit-ENV library
+- PubSubClient
+- ArduinoJson
+- Git (for version control)
+
+All dependencies are automatically managed through `platformio.ini`.
+
+---
+
+## Repository Structure
+
