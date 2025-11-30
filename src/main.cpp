@@ -1,10 +1,17 @@
+
+#if __has_include("secrets.h")
+#include "secrets.h"
+#else
+#include "secrets_example.h"
+#endif
+
 #include <M5Unified.h>
 #include <M5UnitENV.h>
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
 #include <Wire.h>
-#include "secrets.h"
+
 
 
 // ===== SENSOR OBJECTS =====
